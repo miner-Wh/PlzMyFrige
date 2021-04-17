@@ -2,59 +2,100 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/recipe_choice_text"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Choice"
-        android:textSize="20sp"
-        android:textColor="@color/black"
-        app:autoSizeTextType="uniform"
-        app:autoSizeMinTextSize="20sp"
-        app:autoSizeMaxTextSize="50dp"
-        />
-    <Button
-        android:id="@+id/meat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Meat!"
-        tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="275dp" />
-    <Button
-        android:id="@+id/seaFood"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sea Food!"
-        tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="275dp" />
-
-    <Button
-        android:id="@+id/vegetable"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Vegetable!"
-        tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="275dp" />
-    <Button
-        android:id="@+id/goBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Go Back to main to main!"
-        tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="275dp" />
-
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Choice"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:autoSizeMaxTextSize="50dp"
+            app:autoSizeMinTextSize="20sp"
+            app:autoSizeTextType="uniform" />
+
+        <Button
+            android:id="@+id/meat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="Meat!"
+            android:textSize="40sp"
+            app:autoSizeMaxTextSize="50dp"
+            app:autoSizeMinTextSize="20sp"
+            tools:layout_editor_absoluteX="158dp"
+            tools:layout_editor_absoluteY="275dp" />
+
+        <Button
+            android:id="@+id/seaFood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="Sea Food!"
+            android:textSize="40sp"
+            app:autoSizeMaxTextSize="50dp"
+            app:autoSizeMinTextSize="20sp"
+            tools:layout_editor_absoluteX="158dp"
+            tools:layout_editor_absoluteY="275dp" />
+
+        <Button
+            android:id="@+id/vegetable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="Vegetable!"
+            android:textSize="40sp"
+            app:autoSizeMaxTextSize="50dp"
+            app:autoSizeMinTextSize="20sp"
+            tools:layout_editor_absoluteX="158dp"
+            tools:layout_editor_absoluteY="275dp" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="8"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/goBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="left|end"
+            android:layout_weight="1"
+            android:text="Go Back!"
+            app:backgroundTint="#E85D53"
+            tools:layout_editor_absoluteX="158dp"
+            tools:layout_editor_absoluteY="275dp" />
+
+        <Button
+            android:id="@+id/resipeSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="search!"
+            app:backgroundTint="#4CAF50"
+            tools:layout_editor_absoluteX="158dp"
+            tools:layout_editor_absoluteY="275dp" />
+
+
+    </LinearLayout>
+
+
+
+
 </LinearLayout>
