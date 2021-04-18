@@ -1,20 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
+
+    <LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="250sp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="PLZ My Frige"
+            android:textColor="#666"
+            android:textSize="33sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="2dp"
+        >
+
+        <Button
+            android:id="@+id/main_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="로그인하기"
+            android:backgroundTint="#FFE99B"
+            android:textColor="#472909" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="2dp">
+
+        <Button
+            android:id="@+id/goRecipe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="#FFD5B4"
+            android:gravity="center"
+            android:padding="55dp"
+            android:text="레시피 찾기"
+            android:textColor="#472909" />
 
 
+    </TableRow>
 
-    <Button
-        android:id="@+id/goRecipe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Go Recipe!"
-        tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="275dp" />
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="2dp">
 
+        <Button
+            android:id="@+id/main_frige"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="#CDDC39"
+            android:gravity="center"
+            android:padding="55dp"
+            android:text="나의 냉장고"
+            android:textColor="#472909" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/main_buying"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="#78C8D3"
+            android:gravity="center"
+            android:padding="55dp"
+            android:text="장보기"
+            android:textColor="#472909" />
+
+    </TableRow>
+
+</TableLayout>
