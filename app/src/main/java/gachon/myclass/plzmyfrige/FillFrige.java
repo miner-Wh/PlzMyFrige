@@ -1,5 +1,8 @@
 package gachon.myclass.plzmyfrige;
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
