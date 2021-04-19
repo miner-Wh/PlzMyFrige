@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="온라인몰로 이동" />
+        android:text="온라인 몰로 이동" />
 
     <Button
         android:id="@+id/button2"
