@@ -77,7 +77,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="left|end"
             android:layout_weight="1"
-            android:text="Go Back to menu!"
+            android:text="처음으로"
             app:backgroundTint="#E85D53"
             tools:layout_editor_absoluteX="158dp"
             tools:layout_editor_absoluteY="275dp" />
