@@ -8,7 +8,7 @@
         android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="PleaseMyRefidge 로그인"
+        android:text="PleaseMyRefrige 로그인"
         android:textColor="#673AB7"
         android:textSize="20sp"
         android:textStyle="bold" />
