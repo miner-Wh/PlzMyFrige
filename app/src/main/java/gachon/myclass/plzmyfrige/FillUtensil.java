@@ -136,7 +136,7 @@ public class FillUtensil extends Fragment {
         list.add("비닐장갑");
         list.add("앞치마");
         list.add("소스통");
-        list.add("거름망");
+        list.add("거름");
     }
 }
 
