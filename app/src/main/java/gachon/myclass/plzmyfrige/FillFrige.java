@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FillFrige extends Fragment {
-    List<String> list;          // 재료 리스트
+    List<String> list;          // 재료 리스트 보여주기
     ListView listView;          // 검색을 보여줄 리스트변수
     EditText editSearch;        // 검색어를 입력할 Input 창
     frige_SearchAdapter adapter;      // 리스트뷰에 연결할 아답터
