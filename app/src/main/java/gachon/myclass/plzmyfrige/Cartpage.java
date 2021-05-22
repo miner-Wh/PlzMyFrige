@@ -1,49 +1,82 @@
 package gachon.myclass.plzmyfrige;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.util.SparseBooleanArray;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
 
-    public class Cartpage extends AppCompatActivity {
-        ListView listView1;
-        ArrayAdapter<String> adapter;
-        ArrayList<String> listItem;
+public class Cartpage extends Fragment {
+    ListView list;
+    ArrayAdapter<String> adapter;
+    ArrayList<String> listItem;
 
-        EditText editText1;
-        Button button1;
+    EditText editText1;
+    Button addButton,deleteButton;
 
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.cartpage);
-            setTitle("장보기 체크리스트");
-
-            editText1 = findViewById(R.id.editText1);
-            button1 = findViewById(R.id.button1);
-            listItem = new ArrayList<String>();
-
-            button1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    listItem.add(editText1.getText().toString());
-                    adapter.notifyDataSetChanged();
-                    editText1.setText("");
-                }
-
-            });
-
-            adapter = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_multiple_choice,listItem);
-            listView1 = findViewById(R.id.listView1);
-            listView1.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
-            listView1.setAdapter(adapter);
-
-        }
+    @Nullable
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
     }
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.cartpage, container,false);
+
+
+        editText1 = view.findViewById(R.id.editText1);
+        addButton = view.findViewById(R.id.addButton);
+        deleteButton = view.findViewById(R.id.deleteButton);
+        listItem = new ArrayList<String>();
+        //클릭 시 아이템 추가
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int count;
+                count = adapter.getCount();
+                listItem.add(editText1.getText().toString()+ (count + 1));
+                adapter.notifyDataSetChanged();
+                editText1.setText("");
+            }
+
+        });
+        //클릭 시 아이템 삭제
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SparseBooleanArray checkedItems = list.getCheckedItemPositions();
+                int count = adapter.getCount();
+
+                for(int i =count-1;i>=0;i--){
+                    if(checkedItems.get(i)){
+                        listItem.remove(i);
+                    }
+                }
+                //상태 초기화
+                list.clearChoices();
+                adapter.notifyDataSetChanged();
+            }
+        });
+
+        adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_multiple_choice, listItem);
+        list = view.findViewById(R.id.listView1);
+        list.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+        list.setAdapter(adapter);
+
+        return view;
+    }
+
+
+}
 

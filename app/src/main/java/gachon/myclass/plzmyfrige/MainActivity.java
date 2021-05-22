@@ -49,7 +49,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        Button button4 = (Button)findViewById(R.id.main_login);
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Loginpage.class);
+                startActivity(intent);
+            }
+        });
     }
 
 }
