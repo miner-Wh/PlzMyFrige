@@ -14,7 +14,7 @@ import com.google.android.material.tabs.TabLayout;
 
 public class MyFrige extends AppCompatActivity{
 
-    Fragment fillfrige, fillutensil, basket;
+    Fragment fillfrige, fillutensil, cartpage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +23,7 @@ public class MyFrige extends AppCompatActivity{
 
         fillfrige = new FillFrige();
         fillutensil = new FillUtensil();
-        basket = new Basket();
+        cartpage = new Cartpage();
 
 
         getSupportFragmentManager().beginTransaction().add(R.id.frame, fillfrige).commit();
@@ -47,7 +47,7 @@ public class MyFrige extends AppCompatActivity{
                 }
                 else if (position == 2) {
 
-                    selected = basket;
+                    selected = cartpage;
                 }
 
                 getSupportFragmentManager().beginTransaction().replace(R.id.frame, selected).commit();
