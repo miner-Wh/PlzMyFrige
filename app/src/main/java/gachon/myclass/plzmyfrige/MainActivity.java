@@ -21,6 +21,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Button button0 = findViewById(R.id.main_login);
+        button0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Loginpage.class);
+                startActivity(intent);
+            }
+        });
+
         Button button1 = findViewById(R.id.goRecipe);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override

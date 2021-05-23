@@ -31,6 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:text="Meat!"
+            app:backgroundTint="#E88D87"
             android:textSize="40sp"
             app:autoSizeMaxTextSize="50dp"
             app:autoSizeMinTextSize="20sp"
@@ -43,6 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:text="Sea Food!"
+            app:backgroundTint="#AEDFE8"
             android:textSize="40sp"
             app:autoSizeMaxTextSize="50dp"
             app:autoSizeMinTextSize="20sp"
@@ -55,6 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:text="Vegetable!"
+            app:backgroundTint="#B9E8AE"
             android:textSize="40sp"
             app:autoSizeMaxTextSize="50dp"
             app:autoSizeMinTextSize="20sp"
@@ -78,7 +81,7 @@
             android:layout_gravity="left|end"
             android:layout_weight="1"
             android:text="처음으로"
-            app:backgroundTint="#E85D53"
+            app:backgroundTint="#E8B2AE"
             tools:layout_editor_absoluteX="158dp"
             tools:layout_editor_absoluteY="275dp" />
 
@@ -88,7 +91,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="search!"
-            app:backgroundTint="#4CAF50"
+            app:backgroundTint="#E1E0B9"
             tools:layout_editor_absoluteX="158dp"
             tools:layout_editor_absoluteY="275dp" />
 
