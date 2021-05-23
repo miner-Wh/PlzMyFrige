@@ -18,6 +18,7 @@ public class RecipeList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recipe_list);
         storageRef = FirebaseStorage.getInstance().getReference();
+//ㄴㅁㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㅇㄴㅁ어케 하란 고ㅓ얀ㅇㅁㅇㅁㄴㅇㅁㄴㅇ
 
 
 
