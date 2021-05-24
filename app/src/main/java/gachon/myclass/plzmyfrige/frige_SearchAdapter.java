@@ -2,11 +2,14 @@ package gachon.myclass.plzmyfrige;
 
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -15,11 +18,14 @@ public class frige_SearchAdapter extends BaseAdapter {
     private List<String> list;
     private LayoutInflater inflate;
     private ViewHolder viewHolder;
+    public SharedPreferences sharedPreferences;
 
     public frige_SearchAdapter(List<String> list, Context context){
         this.list = list;
         this.context = context;
         this.inflate = LayoutInflater.from(context);
+
+
     }
     @Override
     public int getCount() {
@@ -51,6 +57,36 @@ public class frige_SearchAdapter extends BaseAdapter {
 
         // 리스트에 있는 데이터를 리스트뷰 셀에 뿌린다.
         viewHolder.label.setText(list.get(position));
+
+        final String text = list.get(position);
+        Button button1 = (Button)convertView.findViewById(R.id.insert);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(), text + "가 추가되었습니다.", Toast.LENGTH_SHORT).show();
+                sharedPreferences = context.getSharedPreferences("test",context.MODE_PRIVATE);
+                SharedPreferences.Editor editor= sharedPreferences.edit();
+//                editor.putint(text,1);
+                editor.putBoolean(text,true);
+                editor.commit();
+
+            }
+        });
+        final String text2 = list.get(position);
+        Button button2 = (Button)convertView.findViewById(R.id.out);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(), text2 + "가 삭제되었습니다.", Toast.LENGTH_SHORT).show();
+                sharedPreferences = context.getSharedPreferences("test",context.MODE_PRIVATE);
+                SharedPreferences.Editor editor= sharedPreferences.edit();
+//                editor.putint(text,1);
+                editor.putBoolean(text,false);
+                editor.commit();
+            }
+        });
+
+
 
         return convertView;
     }

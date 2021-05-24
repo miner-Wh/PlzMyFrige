@@ -130,8 +130,8 @@ public class FillUtensil extends Fragment {
         list.add("냄비");
         list.add("밀대");
         list.add("채반");
-        list.add("믹싱 볼");
-        list.add("바구니");
+        list.add("bowl");
+        list.add("pan");
         list.add("고무장갑");
         list.add("비닐장갑");
         list.add("앞치마");

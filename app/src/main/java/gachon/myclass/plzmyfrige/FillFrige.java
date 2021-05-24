@@ -138,6 +138,10 @@ public class FillFrige extends Fragment {
         list.add("카놀라유");
         list.add("올리브유");
         list.add("소금");
+        list.add("rice");
+        list.add("oysterSauce");
+        list.add("egg");
+        list.add("greenOnion");
     }
 }
 
