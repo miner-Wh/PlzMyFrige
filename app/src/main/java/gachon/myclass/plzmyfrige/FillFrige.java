@@ -40,7 +40,7 @@ public class FillFrige extends Fragment {
 
 
 
-        // 리스트를 생성한다.
+        // 리스트를 생성한다
         list = new ArrayList<String>();
 
         // 검색에 사용할 데이터을 미리 저장한다.
