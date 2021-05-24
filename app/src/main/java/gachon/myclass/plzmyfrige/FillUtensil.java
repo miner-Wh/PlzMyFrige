@@ -121,7 +121,7 @@ public class FillUtensil extends Fragment {
         list.add("오븐");
         list.add("석쇠");
         list.add("가스레인지");
-        list.add("거품기");
+        list.add("거품");
         list.add("도마");
         list.add("에어프라이어");
         list.add("키친타올");
