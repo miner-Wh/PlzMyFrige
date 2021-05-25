@@ -1,18 +1,16 @@
-package gachon.myclass.plzmyfrige;
-import androidx.appcompat.app.AppCompatActivity;
+package gachon.myclass.plzmyfrige.Main;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
-import java.util.ArrayList;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class RecipeRoute  extends AppCompatActivity {
+import gachon.myclass.plzmyfrige.R;
+
+public class RecipeRoute extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

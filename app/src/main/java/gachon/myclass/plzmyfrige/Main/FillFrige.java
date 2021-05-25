@@ -1,4 +1,5 @@
-package gachon.myclass.plzmyfrige;
+package gachon.myclass.plzmyfrige.Main;
+
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -15,7 +16,9 @@ import androidx.fragment.app.Fragment;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FillUtensil extends Fragment {
+import gachon.myclass.plzmyfrige.R;
+
+public class FillFrige extends Fragment {
     List<String> list;          // 재료 리스트 보여주기
     ListView listView;          // 검색을 보여줄 리스트변수
     EditText editSearch;        // 검색어를 입력할 Input 창
@@ -31,7 +34,7 @@ public class FillUtensil extends Fragment {
     @Override
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fillutensil, container, false);
+        View v = inflater.inflate(R.layout.fillfrige, container, false);
 
         editSearch = (EditText) v.findViewById(R.id.editSearch);
         listView = (ListView) v.findViewById(R.id.listView);
@@ -39,10 +42,10 @@ public class FillUtensil extends Fragment {
 
 
 
-        // 리스트를 생성한다.
+        // 리스트를 생성한다
         list = new ArrayList<String>();
 
-        // 검색에 사용할 데이터을  저장
+        // 검색에 사용할 데이터을 미리 저장한다.
         settingList();
 
 
@@ -110,33 +113,37 @@ public class FillUtensil extends Fragment {
     }
 
     private void settingList(){
-        list.add("후라이팬");
-        list.add("뒤집개");
-        list.add("집게");
-        list.add("가위");
-        list.add("식칼");
-        list.add("웍");
-        list.add("찜기");
-        list.add("전자레인지");
-        list.add("오븐");
-        list.add("석쇠");
-        list.add("가스레인지");
-        list.add("거품");
-        list.add("도마");
-        list.add("에어프라이어");
-        list.add("키친타올");
-        list.add("국자");
-        list.add("감자칼");
-        list.add("냄비");
-        list.add("밀대");
-        list.add("채반");
-        list.add("bowl");
-        list.add("pan");
-        list.add("고무장갑");
-        list.add("비닐장갑");
-        list.add("앞치마");
-        list.add("소스통");
-        list.add("거름");
+        list.add("양파");
+        list.add("쪽파");
+        list.add("대파");
+        list.add("적양파");
+        list.add("가지");
+        list.add("흙당근");
+        list.add("토마토");
+        list.add("방울토마토");
+        list.add("감자");
+        list.add("고구마");
+        list.add("호박고구마");
+        list.add("마늘");
+        list.add("양상추");
+        list.add("양배추");
+        list.add("배추");
+        list.add("상추");
+        list.add("적상추");
+        list.add("파프리카");
+        list.add("돼지 등심");
+        list.add("소 등심");
+        list.add("삼겹살");
+        list.add("돼지 목살");
+        list.add("우삼겹");
+        list.add("식용유");
+        list.add("카놀라유");
+        list.add("올리브유");
+        list.add("소금");
+        list.add("rice");
+        list.add("oysterSauce");
+        list.add("egg");
+        list.add("greenOnion");
     }
 }
 

@@ -1,7 +1,9 @@
-package gachon.myclass.plzmyfrige;
+package gachon.myclass.plzmyfrige.Main;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+
+import gachon.myclass.plzmyfrige.R;
 
 //온라인몰
 public class OnlineMall extends AppCompatActivity {

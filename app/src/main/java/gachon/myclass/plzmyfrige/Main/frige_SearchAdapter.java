@@ -1,4 +1,4 @@
-package gachon.myclass.plzmyfrige;
+package gachon.myclass.plzmyfrige.Main;
 
 
 import android.content.Context;
@@ -12,6 +12,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
+
+import gachon.myclass.plzmyfrige.R;
 
 public class frige_SearchAdapter extends BaseAdapter {
     private Context context;
