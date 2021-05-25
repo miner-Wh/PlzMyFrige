@@ -60,12 +60,15 @@ public class frige_SearchAdapter extends BaseAdapter {
 
         final String text = list.get(position);
         Button button1 = (Button)convertView.findViewById(R.id.insert);
+        Button button2 = (Button)convertView.findViewById(R.id.out);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(v.getContext(), text + "가 추가되었습니다.", Toast.LENGTH_SHORT).show();
                 sharedPreferences = context.getSharedPreferences("test",context.MODE_PRIVATE);
                 SharedPreferences.Editor editor= sharedPreferences.edit();
+                button1.setEnabled(false);
+                button2.setEnabled(true);
 //                editor.putint(text,1);
                 editor.putBoolean(text,true);
                 editor.commit();
@@ -73,7 +76,7 @@ public class frige_SearchAdapter extends BaseAdapter {
             }
         });
         final String text2 = list.get(position);
-        Button button2 = (Button)convertView.findViewById(R.id.out);
+//        Button button2 = (Button)convertView.findViewById(R.id.out);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,6 +84,8 @@ public class frige_SearchAdapter extends BaseAdapter {
                 sharedPreferences = context.getSharedPreferences("test",context.MODE_PRIVATE);
                 SharedPreferences.Editor editor= sharedPreferences.edit();
 //                editor.putint(text,1);
+                button1.setEnabled(true);
+                button2.setEnabled(false);
                 editor.putBoolean(text,false);
                 editor.commit();
             }
