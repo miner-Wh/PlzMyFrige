@@ -72,12 +72,11 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
 
         if (firebaseAuth.getCurrentUser() != null) {
             finish();
-            startActivity(new Intent(getApplicationContext(), LogoutActivity.class));
+            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
 
         }
         //initializing views
         editTextSignUpName = (EditText) findViewById(R.id.editTextSignUpName);
-        ;
         editTextSignUpEmail = (EditText) findViewById(R.id.editTextSignUpEmail);
         editTextSignUpPassword = (EditText) findViewById(R.id.editTextSignUpPassword);
         buttonBack = (ImageView) findViewById(R.id.buttonBack);
@@ -149,8 +148,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                             toEdit.putString("Email", email);
                             toEdit.commit();
 
-
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                         } else {
                             //If error occured
                             textviewMessage.setText("Error type\n - Email already registered\n -Password at least 6 digits \n - Server error");
