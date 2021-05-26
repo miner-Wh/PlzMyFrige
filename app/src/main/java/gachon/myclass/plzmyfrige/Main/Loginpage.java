@@ -1,4 +1,4 @@
-package gachon.myclass.plzmyfrige;
+package gachon.myclass.plzmyfrige.Main;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import gachon.myclass.plzmyfrige.R;
 
 public class Loginpage extends AppCompatActivity {
 

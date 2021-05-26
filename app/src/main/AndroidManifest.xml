@@ -10,18 +10,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PlzMyFrige">
-        <activity android:name=".MainActivity">
+        <activity android:name=".Main.MainActivity">
+        </activity>
+        <activity android:name=".Main.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RecipeRoute"></activity>
-        <activity android:name=".RecipeList"></activity>
-        <activity android:name=".Buying"></activity>
-        <activity android:name=".MyFrige"></activity>
-        <activity android:name=".Loginpage"></activity>
+        <activity android:name=".Main.LogoutActivity"></activity>
+        <activity android:name=".Main.SignupActivity"></activity>
+        <activity android:name=".Main.FindActivity"></activity>
+        <activity android:name=".Main.OnlineMall"></activity>
+        <activity android:name=".Main.RecipeRoute"></activity>
+        <activity android:name=".Main.RecipeList"></activity>
+        <activity android:name=".Main.Buying"></activity>
+        <activity android:name=".Main.MyFrige"></activity>
+        <activity android:name=".Main.Loginpage"></activity>
     </application>
 
 </manifest>

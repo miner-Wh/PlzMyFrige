@@ -1,4 +1,4 @@
-package gachon.myclass.plzmyfrige;
+package gachon.myclass.plzmyfrige.Main;
 
 import android.os.Bundle;
 import android.widget.TextView;
@@ -9,6 +9,8 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.io.File;
+
+import gachon.myclass.plzmyfrige.R;
 
 public class RecipeList extends AppCompatActivity {
     TextView txt;
