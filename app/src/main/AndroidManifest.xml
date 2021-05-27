@@ -27,7 +27,6 @@
         <activity android:name=".Main.RecipeList"></activity>
         <activity android:name=".Main.Buying"></activity>
         <activity android:name=".Main.MyFrige"></activity>
-        <activity android:name=".Main.Loginpage"></activity>
     </application>
 
 </manifest>
