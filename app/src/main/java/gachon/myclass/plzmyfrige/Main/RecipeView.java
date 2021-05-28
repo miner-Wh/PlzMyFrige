@@ -1,0 +1,115 @@
+package gachon.myclass.plzmyfrige.Main;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Environment;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import java.io.File;
+
+import gachon.myclass.plzmyfrige.R;
+
+public class RecipeView extends AppCompatActivity {
+    Button button1;
+    Button button2;
+    ImageView imageView1;
+    int step;
+    int end;
+    int start;
+
+
+
+    @Override
+    protected void onCreate( Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.recipe_view);
+        Intent secondIntent = getIntent();
+
+        int p = secondIntent.getIntExtra("position", 0);
+        int[] e = getResources().getIntArray(R.array.recipeSize);
+        int[] s = getResources().getIntArray(R.array.recipeStart);
+
+
+        end = e[p];
+        step = s[p];
+        start = s[p];
+        Log.e("position","\ne: "+e+"\ns : "+s);
+        //아이디
+        button1 = (Button) findViewById(R.id.recipe_button1);
+        button2 = (Button) findViewById(R.id.recipe_button2);
+        imageView1 = (ImageView)findViewById(R.id.recipe_image);
+
+
+        imageView1.setImageResource(R.drawable.recipe0+step);
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        //참조 만들기
+        StorageReference storageRef = storage.getReference();
+        //downloadImg(storageRef,step);
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(step == start){
+                    finish();
+                }
+                else
+                    step--;
+                imageView1.setImageResource(R.drawable.recipe0+step);
+            }
+        });
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(step == end){
+                    finish();
+                }
+                step = step +1;
+                imageView1.setImageResource(R.drawable.recipe0+step);
+                //downloadImg(storageRef,step);
+
+            }
+        });
+
+
+    }
+
+    private void downloadImg(StorageReference storageRef, int step) {
+        String fileName = step+".PNG";
+        int r;
+        File filedir = getExternalFilesDir(Environment.DIRECTORY_PICTURES + "/imege/goldenEggRice");
+        final File downFile = new File(filedir,fileName);
+        StorageReference downloadRef = storageRef.child("/imege/goldenEggRice/0.PNG");
+
+        downloadRef.getFile(downFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                // Local temp file has been created
+                Log.e("onSuccess",downFile.getPath());
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Handle any errors
+                Log.e("onFailure",step+" step is fail");
+            }
+        });
+
+    }
+
+
+
+} //gs://plzmf-ebad6.appspot.com/recipe/goldEggRice.txt
+//gs://plzmf-ebad6.appspot.com/imege/goldenEggRice/1.PNG
+

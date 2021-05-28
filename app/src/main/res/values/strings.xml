@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">PlzMyFrige</string>
+
+    <string-array name = "recipe_list">
+        <item>황금 계란 볶음밥</item>
+        <item>닭가슴살 카레 볶음밥</item>
+    </string-array>
+
+
 </resources>
