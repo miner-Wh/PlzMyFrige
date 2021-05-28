@@ -92,7 +92,7 @@ public class homelist extends Fragment {
             }
         }
 
-//        전부다받기
+//        전부다받기2
 //        String val ="";
 //        Set<String> keys = map.keySet();
 //        for (String KEY : keys) {
