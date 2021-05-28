@@ -45,12 +45,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_login);
         firebaseAuth = FirebaseAuth.getInstance();//use firebase get instance
 
-        if (firebaseAuth.getCurrentUser() != null) {
+       /* if (firebaseAuth.getCurrentUser() != null) {
             //if already logged in
             finish();//finish and go to Main activity
 
             startActivity(new Intent(getApplicationContext(), MainActivity.class)); //
         }
+        */
+
         editTextLoginEmail = (EditText) findViewById(R.id.editTextLoginEmail);
         editTextLoginPassword = (EditText) findViewById(R.id.editTextLoginPassword);
         textviewSignup = (TextView) findViewById(R.id.textViewSignUp);
@@ -76,10 +78,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         String password = editTextLoginPassword.getText().toString().trim();
         //get identification
 
-        /* *******Validation ref:http://blog.naver.com/suda552/220813122485******** */
-
-        // 401sujung@naver.com
-        // wlwjtm1023@
 
         /* *******Validation of email(is empty& validation)******** */
         if (TextUtils.isEmpty(email)) {
@@ -102,28 +100,26 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             return;
         }
         if(email!=null&&password!=null) {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
+            //logging in the user
+            firebaseAuth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            progressDialog.dismiss();
+                            if (task.isSuccessful()) {
+                                finish();
+                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Login Failed! Please try again", Toast.LENGTH_LONG).show();
+                                textviewMessage.setText("Passwords must consist of numbers, alphabets, \nand special symbols.\nPassword must be \nat least 8 characters long\n");
+                            }
+                        }
+                    });
         }
 
         progressDialog.setMessage("Logging in. wait a moment please...");
         progressDialog.show();
 
-        //logging in the user
-        firebaseAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        progressDialog.dismiss();
-                        if (task.isSuccessful()) {
-                            finish();
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                        } else {
-                            Toast.makeText(getApplicationContext(), "Login Failed! Please try again", Toast.LENGTH_LONG).show();
-                            textviewMessage.setText("Passwords must consist of numbers, alphabets, \nand special symbols.\nPassword must be \nat least 8 characters long\n");
-                        }
-                    }
-                });
     }
 
 
