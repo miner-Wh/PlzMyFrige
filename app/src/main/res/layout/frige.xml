@@ -24,6 +24,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="장바구니"/>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="내 바구니"/>
 
     </com.google.android.material.tabs.TabLayout>
 
