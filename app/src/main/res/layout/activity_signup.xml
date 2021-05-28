@@ -21,14 +21,14 @@
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="159dp"
+            android:layout_width="242dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
             android:fontFamily="@font/opensans_bold"
             android:text="Plz My Fridge"
             android:textColor="@color/colorAccent"
-            android:textSize="40dp"
+            android:textSize="35dp"
             android:textStyle="italic" />
 
         <LinearLayout
