@@ -14,7 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="379dp"
         android:layout_weight="0.8"
-        tools:context=".MapsActivity" />
+        tools:context=".MapsActivity"
+        tools:layout="@layout/nearmall" />
 
     <Button
         android:id="@+id/button"

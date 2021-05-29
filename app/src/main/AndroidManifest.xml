@@ -32,7 +32,7 @@
             android:required="false"/>
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCI-knd5AE5rBps1WoBiF7l_JgyrCGZRjk" />
+            android:value="AIzaSyCI-knd5AE5rBps1WoBiF7l_JgyrCGZRjk" /> //api key
 
         <activity android:name=".Main.MainActivity">
             <intent-filter>

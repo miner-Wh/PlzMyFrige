@@ -55,7 +55,7 @@ public class Buying extends AppCompatActivity {
                 }
             });
 
-            //주변마트로 이동
+            //주변마트로
             nearMall.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
