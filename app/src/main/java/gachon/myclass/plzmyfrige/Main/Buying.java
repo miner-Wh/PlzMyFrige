@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import gachon.myclass.plzmyfrige.R;
 
-public class Buying extends AppCompatActivity{
+public class Buying extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,29 +21,51 @@ public class Buying extends AppCompatActivity{
 
         ImageButton onlineMall = findViewById(R.id.onlineMallButton);
         ImageButton nearMall = findViewById(R.id.nearMallButton);
+        /*
+            public void onClick (View view)
+            {
+                switch (view.getId()) {
+                    case R.id.onlineMall:
+                        //온라인몰 버튼을 눌렀을 때의 처리
+                        Intent intent = new Intent(getApplicationContext(), OnlineMall.class);
+                        startActivity(intent);
+                        break;
 
-        //온라인 몰로 이동
-        onlineMall.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick (View v){
-                Intent intent = new Intent(getApplicationContext(), OnlineMall.class);
-                startActivity(intent);
-                finish();
+                    case R.id.nearMall:
+                        //주변몰 버튼을 눌렀을 때의 처리
+                        Intent intent1 = new Intent(getApplicationContext(), NearMall.class);
+                        startActivity(intent1);
+                        break;
+
+                    case R.id.returnPage:
+                        //돌아가기 버튼을 눌렀을 때의 처리
+                        Toast.makeText(getApplicationContext(), "돌아가기버튼이 눌렸어요", Toast.LENGTH_LONG).show();
+                        finish();
+                        break;
+                }
+                */
+
+            //온라인 몰로 이동
+            onlineMall.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getApplicationContext(), OnlineMall.class);
+                    startActivity(intent);
+                    finish();
+                }
+            });
+
+            //주변마트로 이동
+            nearMall.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getApplicationContext(),NearMall.class);
+                    startActivity(intent);
+                   finish();
+                }
+            });
+
+
             }
-        });
+        }
 
-        //주변마트로 이동
-        nearMall.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick (View v){
-               // Intent intent = new Intent(getApplicationContext(), OnlineMall.class);
-               // startActivity(intent);
-                // finish();
-            }
-        });
-
-
-    }
-}
