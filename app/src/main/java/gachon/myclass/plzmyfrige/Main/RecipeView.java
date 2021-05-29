@@ -38,21 +38,21 @@ public class RecipeView extends AppCompatActivity {
         Intent secondIntent = getIntent();
 
         int p = secondIntent.getIntExtra("position", 0);
-        int[] e = getResources().getIntArray(R.array.recipeSize);
+
+
         int[] s = getResources().getIntArray(R.array.recipeStart);
 
-
-        end = e[p];
         step = s[p];
+        end = s[p+1]-1;
         start = s[p];
-        Log.e("position","\ne: "+e+"\ns : "+s);
+
         //아이디
         button1 = (Button) findViewById(R.id.recipe_button1);
         button2 = (Button) findViewById(R.id.recipe_button2);
         imageView1 = (ImageView)findViewById(R.id.recipe_image);
 
 
-        imageView1.setImageResource(R.drawable.recipe0+step);
+        imageView1.setImageResource(R.drawable.recipe00+step);
         FirebaseStorage storage = FirebaseStorage.getInstance();
         //참조 만들기
         StorageReference storageRef = storage.getReference();
@@ -64,9 +64,10 @@ public class RecipeView extends AppCompatActivity {
                 if(step == start){
                     finish();
                 }
-                else
+                else{
                     step--;
-                imageView1.setImageResource(R.drawable.recipe0+step);
+                    imageView1.setImageResource(R.drawable.recipe00 +step);
+                }
             }
         });
         button2.setOnClickListener(new View.OnClickListener() {
@@ -75,8 +76,11 @@ public class RecipeView extends AppCompatActivity {
                 if(step == end){
                     finish();
                 }
-                step = step +1;
-                imageView1.setImageResource(R.drawable.recipe0+step);
+                else{
+                    step = step +1;
+                    imageView1.setImageResource(R.drawable.recipe00 +step);
+                }
+
                 //downloadImg(storageRef,step);
 
             }

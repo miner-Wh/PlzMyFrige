@@ -1,4 +1,5 @@
 package gachon.myclass.plzmyfrige.Main;
+
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
