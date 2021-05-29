@@ -7,7 +7,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
-        android:backgroundTint="#1E90FF"
+        android:backgroundTint="#78C8D3"
         android:id="@+id/insert"
         android:text="넣기"></Button>
     <View
@@ -21,7 +21,9 @@
         android:layout_height="50dp"
         android:gravity="left|center"
         android:paddingLeft="5dp"
-        android:textSize="20dp"/>
+        android:textSize="20dp"
+        android:textStyle="bold"
+        />
     <View
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -32,7 +34,7 @@
         android:layout_height="wrap_content"
         android:text="빼기"
         android:layout_margin="3dp"
-        android:backgroundTint="#CD1039"
+        android:backgroundTint="#F1645A"
         android:id="@+id/out"
         >
 

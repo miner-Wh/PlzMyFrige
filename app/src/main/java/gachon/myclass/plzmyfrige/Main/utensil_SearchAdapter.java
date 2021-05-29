@@ -15,14 +15,14 @@ import java.util.List;
 
 import gachon.myclass.plzmyfrige.R;
 
-public class frige_SearchAdapter extends BaseAdapter {
+public class utensil_SearchAdapter extends BaseAdapter {
     private Context context;
     private List<String> list;
     private LayoutInflater inflate;
     private ViewHolder viewHolder;
     public SharedPreferences sharedPreferences;
 
-    public frige_SearchAdapter(List<String> list, Context context){
+    public utensil_SearchAdapter(List<String> list, Context context){
         this.list = list;
         this.context = context;
         this.inflate = LayoutInflater.from(context);
@@ -67,7 +67,7 @@ public class frige_SearchAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 Toast.makeText(v.getContext(), text + "가 추가되었습니다.", Toast.LENGTH_SHORT).show();
-                sharedPreferences = context.getSharedPreferences("frigelist",context.MODE_PRIVATE);
+                sharedPreferences = context.getSharedPreferences("utensillist",context.MODE_PRIVATE);
                 SharedPreferences.Editor editor= sharedPreferences.edit();
                 button1.setEnabled(false);
                 button2.setEnabled(true);
@@ -83,7 +83,7 @@ public class frige_SearchAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 Toast.makeText(v.getContext(), text2 + "가 삭제되었습니다.", Toast.LENGTH_SHORT).show();
-                sharedPreferences = context.getSharedPreferences("frigelist",context.MODE_PRIVATE);
+                sharedPreferences = context.getSharedPreferences("utensillist",context.MODE_PRIVATE);
                 SharedPreferences.Editor editor= sharedPreferences.edit();
 //                editor.putint(text,1);
                 button1.setEnabled(true);

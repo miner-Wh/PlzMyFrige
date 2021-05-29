@@ -30,10 +30,12 @@ public class RecipeListAdapter extends BaseAdapter {
     Context context;
     LayoutInflater layoutInflater;
     String[] data;
-    public RecipeListAdapter(Context context, String[] data){
+    int[] pos;
+    public RecipeListAdapter(Context context, String[] data,int[] dataPosition){
         this.context = context;
         this.layoutInflater = LayoutInflater.from(context);
         this.data = data;
+        this.pos = dataPosition;
     }
     @Override
     public int getCount() {
@@ -61,11 +63,13 @@ public class RecipeListAdapter extends BaseAdapter {
             public void onClick(View v) {
                 Intent intent = new Intent(context, // 현재 화면의 제어권자
                         RecipeView.class);
-                intent.putExtra("position",position);
+                intent.putExtra("position",pos[position]);
                 context.startActivity(intent);
             }
         });
 
         return view;
     }
+
+
 }

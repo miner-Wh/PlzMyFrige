@@ -1,21 +1,22 @@
 package gachon.myclass.plzmyfrige.Main;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 
-import gachon.myclass.plzmyfrige.Main.Cartpage;
-import gachon.myclass.plzmyfrige.Main.FillFrige;
-import gachon.myclass.plzmyfrige.Main.FillUtensil;
 import gachon.myclass.plzmyfrige.R;
 
 
 public class MyFrige extends AppCompatActivity{
 
-    Fragment fillfrige, fillutensil, cartpage;
+    Fragment fillfrige, fillutensil, cartpage, homelist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class MyFrige extends AppCompatActivity{
         fillfrige = new FillFrige();
         fillutensil = new FillUtensil();
         cartpage = new Cartpage();
+        homelist = new homelist();
 
 
         getSupportFragmentManager().beginTransaction().add(R.id.frame, fillfrige).commit();
@@ -49,6 +51,9 @@ public class MyFrige extends AppCompatActivity{
                 else if (position == 2) {
 
                     selected = cartpage;
+                }
+                else if (position ==3 ){
+                    selected = homelist;
                 }
 
                 getSupportFragmentManager().beginTransaction().replace(R.id.frame, selected).commit();

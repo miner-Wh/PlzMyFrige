@@ -1,4 +1,5 @@
 package gachon.myclass.plzmyfrige.Main;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -12,24 +13,50 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import gachon.myclass.plzmyfrige.R;
+
+import static android.content.Context.MODE_PRIVATE;
 
 public class FillUtensil extends Fragment {
     List<String> list;          // 재료 리스트 보여주기
     ListView listView;          // 검색을 보여줄 리스트변수
     EditText editSearch;        // 검색어를 입력할 Input 창
-    frige_SearchAdapter adapter;      // 리스트뷰에 연결할 아답터
+    gachon.myclass.plzmyfrige.Main.utensil_SearchAdapter adapter;      // 리스트뷰에 연결할 아답터
     ArrayList<String> arraylist;
+    public SharedPreferences sharedPreferences;
 
     @Nullable
 
     @Override
     public void onCreate(Bundle savedInstancestate){
         super.onCreate(savedInstancestate);
+        list = new ArrayList<String>();
+        settingList();
+        sharedPreferences = getContext().getSharedPreferences("utensillist",MODE_PRIVATE);
+        SharedPreferences.Editor editor= sharedPreferences.edit();
+        for (int i=0; i< list.size();i++) {
+            String str = list.get(i).toString();
+            if (sharedPreferences.getBoolean(str, false) == true) {
+            } else {
+                editor.putBoolean(str, false);
+                editor.commit();
+            }
+        }
+        editor.commit();
+
+
+
+
+
     }
+
     @Override
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -41,18 +68,21 @@ public class FillUtensil extends Fragment {
 
 
 
+
+
+
         // 리스트를 생성한다.
-        list = new ArrayList<String>();
+
 
         // 검색에 사용할 데이터을  저장
-        settingList();
+
 
 
         arraylist = new ArrayList<String>();
         arraylist.addAll(list);
 
 
-        adapter = new frige_SearchAdapter(list, getActivity());
+        adapter = new gachon.myclass.plzmyfrige.Main.utensil_SearchAdapter(list, getActivity());
 
         // 리스트뷰에 아답터를 연결한다.
         listView.setAdapter(adapter);
@@ -110,8 +140,7 @@ public class FillUtensil extends Fragment {
         adapter.notifyDataSetChanged();
 
     }
-
-    private void settingList(){
+    private void settingList() {
         list.add("후라이팬");
         list.add("뒤집개");
         list.add("집게");
@@ -139,7 +168,9 @@ public class FillUtensil extends Fragment {
         list.add("앞치마");
         list.add("소스통");
         list.add("거름");
+        Collections.sort(list);
     }
+
 }
 
 
