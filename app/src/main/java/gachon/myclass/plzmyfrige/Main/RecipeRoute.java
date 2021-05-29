@@ -37,6 +37,7 @@ public class RecipeRoute extends AppCompatActivity {
                        "고기고기고기", Toast.LENGTH_LONG).show();
                 //finish();
                 Intent intent = new Intent(getApplicationContext(), RecipeList.class);
+                intent.putExtra("category",1);
                 startActivity(intent);
             }
         });
@@ -46,6 +47,9 @@ public class RecipeRoute extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),
                         "해물해물해물", Toast.LENGTH_LONG).show();
                 //finish();
+                Intent intent = new Intent(getApplicationContext(), RecipeList.class);
+                intent.putExtra("category",2);
+                startActivity(intent);
             }
         });
         buttonV.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +58,9 @@ public class RecipeRoute extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),
                         "야채채소야채", Toast.LENGTH_LONG).show();
                 //finish();
+                Intent intent = new Intent(getApplicationContext(), RecipeList.class);
+                intent.putExtra("category",3);
+                startActivity(intent);
             }
         });
 

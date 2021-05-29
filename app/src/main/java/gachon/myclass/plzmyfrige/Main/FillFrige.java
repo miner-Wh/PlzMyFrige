@@ -134,37 +134,30 @@ public class FillFrige extends Fragment {
 
     }
     private void settingList() {
-        list.add("양파");
-        list.add("쪽파");
+        list.add("간장");
+        list.add("갈치");
+        list.add("계란");
+        list.add("고추");
+        list.add("고추장");
+        list.add("고춧가루");
+        list.add("다진마늘");
+        list.add("닭가슴살");
+        list.add("당근");
         list.add("대파");
-        list.add("적양파");
-        list.add("가지");
-        list.add("흙당근");
-        list.add("토마토");
-        list.add("방울토마토");
-        list.add("감자");
-        list.add("고구마");
-        list.add("호박고구마");
-        list.add("마늘");
-        list.add("양상추");
-        list.add("양배추");
+        list.add("돼지고기");
+        list.add("맛술");
+        list.add("무");
+        list.add("물엿");
+        list.add("밀가루");
+        list.add("밥");
         list.add("배추");
-        list.add("상추");
-        list.add("적상추");
-        list.add("파프리카");
-        list.add("돼지 등심");
-        list.add("소 등심");
-        list.add("삼겹살");
-        list.add("돼지 목살");
-        list.add("우삼겹");
+        list.add("부추");
+        list.add("새우");
         list.add("식용유");
-        list.add("카놀라유");
-        list.add("올리브유");
-        list.add("소금");
-        list.add("rice");
-        list.add("oysterSauce");
-        list.add("egg");
-        list.add("greenOnion");
+        list.add("액젓");
+        list.add("양파");
+        list.add("참기름");
+        list.add("카레 가루");
         Collections.sort(list);
     }
 
