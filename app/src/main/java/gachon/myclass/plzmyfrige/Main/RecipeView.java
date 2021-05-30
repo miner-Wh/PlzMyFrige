@@ -2,22 +2,10 @@ package gachon.myclass.plzmyfrige.Main;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Environment;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.storage.FileDownloadTask;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-
-import java.io.File;
 
 import gachon.myclass.plzmyfrige.R;
 
@@ -28,8 +16,6 @@ public class RecipeView extends AppCompatActivity {
     int step;
     int end;
     int start;
-
-
 
     @Override
     protected void onCreate( Bundle savedInstanceState) {
@@ -46,17 +32,11 @@ public class RecipeView extends AppCompatActivity {
         end = s[p+1]-1;
         start = s[p];
 
-        //아이디
         button1 = (Button) findViewById(R.id.recipe_button1);
         button2 = (Button) findViewById(R.id.recipe_button2);
         imageView1 = (ImageView)findViewById(R.id.recipe_image);
 
-
         imageView1.setImageResource(R.drawable.recipe00+step);
-        FirebaseStorage storage = FirebaseStorage.getInstance();
-        //참조 만들기
-        StorageReference storageRef = storage.getReference();
-        //downloadImg(storageRef,step);
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,15 +60,12 @@ public class RecipeView extends AppCompatActivity {
                     step = step +1;
                     imageView1.setImageResource(R.drawable.recipe00 +step);
                 }
-
-                //downloadImg(storageRef,step);
-
             }
         });
 
 
     }
-
+/*
     private void downloadImg(StorageReference storageRef, int step) {
         String fileName = step+".PNG";
         int r;
@@ -111,7 +88,7 @@ public class RecipeView extends AppCompatActivity {
         });
 
     }
-
+*/
 
 
 } //gs://plzmf-ebad6.appspot.com/recipe/goldEggRice.txt

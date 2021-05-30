@@ -70,11 +70,13 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
 
         /* ********if already logged in,finish this job********* */
 
-        if (firebaseAuth.getCurrentUser() != null) {
+        /*
+       if (firebaseAuth.getCurrentUser() != null) {
             finish();
             startActivity(new Intent(getApplicationContext(), LoginActivity.class));
 
         }
+*/
         //initializing views
         editTextSignUpName = (EditText) findViewById(R.id.editTextSignUpName);
         editTextSignUpEmail = (EditText) findViewById(R.id.editTextSignUpEmail);
