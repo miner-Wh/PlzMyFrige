@@ -48,44 +48,30 @@ public class LogoutActivity extends AppCompatActivity implements View.OnClickLis
 
     }
 
-    private void Logout() {
-
-    }
-
-    private void deleteUser() {
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
-        progressDialog.setMessage("Deleting User. please wait a moment please...");
-        progressDialog.show();
-
-        user.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if (task.isSuccessful()) {
-                    progressDialog.dismiss();
-                    Toast.makeText(getApplicationContext(), "Your account has been deleted.", Toast.LENGTH_LONG).show();
-                    finish();
-                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-                } else {
-                    Toast.makeText(getApplicationContext(), "Please try again", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-    }
-
-
     @Override
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.memberWithdrawal:
-                deleteUser();
-                break;
-            case R.id.logOut:
-                firebaseAuth.signOut();
+        //로그아웃
+        logOut.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Toast.makeText(getApplicationContext(), "Logout.", Toast.LENGTH_LONG).show();
                 finish();
                 startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-                break;
-        }
+            }
+        });
+
+        //탈퇴하기
+        memberWithdrawal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                firebaseAuth.getCurrentUser().delete();
+                Toast.makeText(getApplicationContext(), "Your account has been deleted.", Toast.LENGTH_LONG).show();
+                finish();
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+            }
+        });
 
 
     }

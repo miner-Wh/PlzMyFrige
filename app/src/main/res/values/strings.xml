@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PlzMyFrige</string>
+    <string name="app_name">PlzMyFridge</string>
 
     <string-array name = "recipe_list">
         <item>갈치 조림</item>

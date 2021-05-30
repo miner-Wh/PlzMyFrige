@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
 import gachon.myclass.plzmyfrige.R;
 
 public class Buying extends AppCompatActivity {
@@ -46,27 +45,27 @@ public class Buying extends AppCompatActivity {
                 }
                 */
 
-            //온라인 몰로 이동
-            onlineMall.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(getApplicationContext(), OnlineMall.class);
-                    startActivity(intent);
-                    finish();
-                }
-            });
-
-            //주변마트로
-            nearMall.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(getApplicationContext(), NearMall.class);
-                    startActivity(intent);
-                   finish();
-                }
-            });
-
+        //온라인 몰로 이동
+        onlineMall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), OnlineMall.class);
+                startActivity(intent);
 
             }
-        }
+        });
+
+        //주변마트로 이동
+        nearMall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),NearMall.class);
+                startActivity(intent);
+
+            }
+        });
+
+
+    }
+}
 
