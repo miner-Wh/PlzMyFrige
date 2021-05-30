@@ -58,7 +58,7 @@ public class NearMall extends AppCompatActivity
         implements OnMapReadyCallback,
         ActivityCompat.OnRequestPermissionsResultCallback, PlacesListener {
 
-
+    boolean user = false;
     private GoogleMap mMap;
     private Marker currentMarker = null;
 
@@ -129,6 +129,7 @@ public class NearMall extends AppCompatActivity
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
+
     }
 
     @Override
@@ -189,6 +190,7 @@ public class NearMall extends AppCompatActivity
         mMap.getUiSettings().setMyLocationButtonEnabled(true);
 
         mMap.setOnMapClickListener(latLng -> Log.d(TAG, "onMapClick :"));
+
     }
 
     LocationCallback locationCallback = new LocationCallback() {
@@ -214,9 +216,10 @@ public class NearMall extends AppCompatActivity
 
 
                 //현재 위치에 마커 생성하고 이동
-                setCurrentLocation(location, markerTitle, markerSnippet);
+               setCurrentLocation(location, markerTitle, markerSnippet);
 
                 mCurrentLocation = location;
+
             }
 
 
@@ -351,6 +354,8 @@ public class NearMall extends AppCompatActivity
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(currentLatLng);
         markerOptions.title(markerTitle);
+        markerOptions.icon((BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+        markerOptions.alpha(0.5f);
         markerOptions.snippet(markerSnippet);
         markerOptions.draggable(true);
 
@@ -380,6 +385,7 @@ public class NearMall extends AppCompatActivity
         markerOptions.snippet(markerSnippet);
         markerOptions.draggable(true);
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+        markerOptions.alpha(0.5f);
         currentMarker = mMap.addMarker(markerOptions);
 
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(DEFAULT_LOCATION, 15);
@@ -415,6 +421,7 @@ public class NearMall extends AppCompatActivity
                                            @NonNull String[] permissions,
                                            @NonNull int[] grandResults) {
 
+        super.onRequestPermissionsResult(permsRequestCode, permissions, grandResults);
         if (permsRequestCode == PERMISSIONS_REQUEST_CODE && grandResults.length == REQUIRED_PERMISSIONS.length) {
 
             // 요청 코드가 PERMISSIONS_REQUEST_CODE 이고, 요청한 퍼미션 개수만큼 수신되었다면
@@ -550,6 +557,8 @@ public class NearMall extends AppCompatActivity
                 MarkerOptions markerOptions = new MarkerOptions();
                 markerOptions.position(latLng);
                 markerOptions.title(place.getName());
+                markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+                markerOptions.alpha(0.5f);
                 markerOptions.snippet(markerSnippet);
                 Marker item = mMap.addMarker(markerOptions);
                 previous_marker.add(item);
@@ -572,6 +581,7 @@ public class NearMall extends AppCompatActivity
 
     }
 
+
     public void showPlaceInformation(LatLng location) {
         mMap.clear();//지도 클리어
 
@@ -580,7 +590,7 @@ public class NearMall extends AppCompatActivity
 
         new NRPlaces.Builder()
                 .listener(NearMall.this)
-                .key("AIzaSyDFZvptqzlZT4-EKO6X3P-3Zh7Bkqdsvgw")
+                .key("AIzaSyChdroxArordhrM6MhZdRa5pp0lExsDlX4")
                 .latlng(location.latitude, location.longitude)//현재 위치
                 .radius(500) //500 미터 내에서 검색
                 .type(PlaceType.CONVENIENCE_STORE) //편의점
