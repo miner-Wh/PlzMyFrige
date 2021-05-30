@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
 import gachon.myclass.plzmyfrige.R;
 
 public class Buying extends AppCompatActivity {
@@ -55,11 +56,11 @@ public class Buying extends AppCompatActivity {
                 }
             });
 
-            //주변마트로 이동
+            //주변마트로
             nearMall.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(getApplicationContext(),NearMall.class);
+                    Intent intent = new Intent(getApplicationContext(), NearMall.class);
                     startActivity(intent);
                    finish();
                 }

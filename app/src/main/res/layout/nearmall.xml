@@ -14,14 +14,15 @@
         android:layout_width="match_parent"
         android:layout_height="379dp"
         android:layout_weight="0.8"
-        tools:context=".MapsActivity" />
+        tools:context=".MapsActivity"
+        tools:layout="@layout/nearmall" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.2"
-        android:text="검색"
+        android:text="내 근처 마트 찾아보기"
         app:backgroundTint="#F57F17" />
 
 </LinearLayout>
