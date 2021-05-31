@@ -31,8 +31,11 @@ public class RecipeList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recipe_list);
+        int nn=0;
         textView = findViewById(R.id.test_recipe_text);
-
+        dataSample = getResources().getStringArray(R.array.recipe_list);
+        recipein = getResources().getIntArray(R.array.recipeToTenInt);
+        R_cate = getResources().getIntArray(R.array.recipeCate);
         SharedPreferences shef = this.getSharedPreferences("frigelist", this.MODE_PRIVATE);
         Map<String,?> map = shef.getAll();
         Set<String> keys = map.keySet();
@@ -54,17 +57,15 @@ public class RecipeList extends AppCompatActivity {
                 usten +=Math.pow(2,i);
             }
         }
-
         Intent secondIntent = getIntent();
         cate = secondIntent.getIntExtra("category",0);
 
-        dataSample = getResources().getStringArray(R.array.recipe_list);
-        recipein = getResources().getIntArray(R.array.recipeToTenInt);
-        R_cate = getResources().getIntArray(R.array.recipeCate);
-        int nn=0;
         for(int n=0;n<dataSample.length;n++){
             if((recipein[n] & usten )== recipein[n]){
                 if(R_cate[n]==cate) {
+                    nn++;
+                }
+                else if(cate == 0){
                     nn++;
                 }
             }
@@ -76,6 +77,11 @@ public class RecipeList extends AppCompatActivity {
             if((recipein[n] & usten )== recipein[n]){
                 if(R_cate[n]==cate) {
                     //Log.e("listTrue", "" + dataSample[n] + " true");
+                    data[nn] = dataSample[n];
+                    dataPosition[nn] = n;
+                    nn++;
+                }
+                else if(cate == 0 ){
                     data[nn] = dataSample[n];
                     dataPosition[nn] = n;
                     nn++;

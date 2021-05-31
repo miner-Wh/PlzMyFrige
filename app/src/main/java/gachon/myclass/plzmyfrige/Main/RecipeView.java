@@ -22,19 +22,16 @@ public class RecipeView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recipe_view);
         Intent secondIntent = getIntent();
+        button1 = (Button) findViewById(R.id.recipe_button1);
+        button2 = (Button) findViewById(R.id.recipe_button2);
+        imageView1 = (ImageView)findViewById(R.id.recipe_image);
 
         int p = secondIntent.getIntExtra("position", 0);
-
-
         int[] s = getResources().getIntArray(R.array.recipeStart);
 
         step = s[p];
         end = s[p+1]-1;
         start = s[p];
-
-        button1 = (Button) findViewById(R.id.recipe_button1);
-        button2 = (Button) findViewById(R.id.recipe_button2);
-        imageView1 = (ImageView)findViewById(R.id.recipe_image);
 
         imageView1.setImageResource(R.drawable.recipe00+step);
 

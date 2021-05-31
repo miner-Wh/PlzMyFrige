@@ -86,11 +86,11 @@
             tools:layout_editor_absoluteY="275dp" />
 
         <Button
-            android:id="@+id/resipeSearch"
+            android:id="@+id/resipeAll"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="search!"
+            android:text="모두 보기"
             app:backgroundTint="#E1E0B9"
             tools:layout_editor_absoluteX="158dp"
             tools:layout_editor_absoluteY="275dp" />
