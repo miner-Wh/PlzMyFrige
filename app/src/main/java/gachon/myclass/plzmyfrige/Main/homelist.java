@@ -139,7 +139,7 @@ public class homelist extends Fragment {
 //      nww 거꾸로 뒤집기
         StringBuffer sb = new StringBuffer(val4);
         String reversed = sb.reverse().toString();
-        frigelist.setText(val+"2진수 : "+reversed+"\n"+"10진수 : "+ Integer.toString(usten));
+        frigelist.setText(val);
 //        frigelist.setText(val3);
 
 
